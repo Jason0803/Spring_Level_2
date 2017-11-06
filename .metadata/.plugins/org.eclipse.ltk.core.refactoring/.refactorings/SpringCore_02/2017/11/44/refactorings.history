@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 2 elements from project &apos;SpringCore_02&apos;&#x0A;- Original project: &apos;SpringCore_02&apos;&#x0A;- Original elements:&#x0A;     SpringCore_02/src/src.main.java.spring.service.domain&#x0A;     SpringCore_02/src/src.test.java.spring.service.test" description="Delete elements" element1="/src&lt;src.test.java.spring.service.test" element2="/src&lt;src.test.java.spring.service" element3="/src&lt;src.test.java.spring" element4="/src&lt;src.test.java" element5="/src&lt;src.test" element6="/src&lt;src.main.java.spring.service.domain" element7="/src&lt;src.main.java.spring.service" element8="/src&lt;src.main.java.spring" element9="/src&lt;src.main.java" elements="9" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1509697127618" subPackages="false" version="1.0"/>
+</session>

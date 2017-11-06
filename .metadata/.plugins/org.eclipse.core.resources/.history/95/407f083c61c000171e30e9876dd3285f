@@ -1,0 +1,20 @@
+package spring.service.dice.impl;
+
+import spring.service.dice.Dice;
+
+public class DiceAImpl implements Dice {
+	private int value;
+	
+	@Override
+	public void selectedNumber() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int getValue() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

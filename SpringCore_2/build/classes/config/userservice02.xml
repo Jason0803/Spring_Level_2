@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+<bean id="user06" class="spring.service.domain.User">
+	<constructor-arg value="06" index="0"/>
+	<constructor-arg value="06유저" index="2"/>
+	<constructor-arg value="0606" index="1"/>
+</bean>
+
+<bean id="user07" class="spring.service.domain.User">
+	<constructor-arg value="07" type="int"/>
+	<constructor-arg value="07유저" type="java.lang.String"/>
+	<constructor-arg ref="password" index="1"/>
+</bean>
+
+<!--  
+간단한 상수값이나 디비서버의 정보 같은 값은
+properties 파일을 외부화시켜 놓고
+이 파일을 설정문서에서 로딩해서 값을 빈에 입력해서 사용한다.
+당연히 이런 기능을 가능케하는 스프링 라이브러리가 존재 한다.
+PropertyPlaceholderConfigurer
+setLocation() 이 있다.
+이 안에 userservice02.properties의 경로와 함께 파일명을 입력
+-->
+
+<!-- <bean id="propertyConfigure" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<property name="location" value="config/userservice02.properties"/>
+</bean> -->
+<context:property-placeholder location="classpath:config/userservice02.properties"/>
+<bean id="user08" class="spring.service.domain.User">
+	<!--  properties 파일을 설정문서에서 WIRING 했다면
+		  파일의 Resource에 접근하는 방식으로는 EL 기법을 사용할 수 있다.
+		  자바는 계단이다.
+	 -->
+	<property name="age" value="${user.age}"/>
+	<property name="password" value="${user.password}"/>
+	<property name="userId" value="${user.userId}"/>
+</bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

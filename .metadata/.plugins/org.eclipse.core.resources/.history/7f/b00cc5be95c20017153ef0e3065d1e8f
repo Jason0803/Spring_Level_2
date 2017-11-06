@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+<!--  jdbc.properties 파일의 정보를 끌어당긴다..-->
+<context:property-placeholder location="classpath:config/jdbc.properties"/>
+
+<!-- 현업에서 가장 많이 사용하는 BasicDataSource -->
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"></bean>
+	<property name="driverClassName" value="${jdbc.driverClassName}"></property>
+	<property name="url" value="${jdbc.url}"></property>
+	<property name="username" value="${jdbc.username}"></property>
+	<property name="password" value="${jdbc.password}"></property>	
+</beans>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 개발자 인스턴스 빈 생성 :: setter 주입 :: id, age값 :: 단순 프라퍼티 값 주입 -->
+<bean id="user01" class="spring.service.domain.User">
+	<property name="userId" value="01유저"/>
+	<property name="age" value="01"/>
+</bean>
+
+<!-- API 인스턴스 빈 생성 :: 생성자를 통한 값 주입 :: 단순 프라퍼티 값 주입 -->
+<bean id="password" class="java.lang.String">
+	<constructor-arg value="7777"/>
+</bean>
+
+
+<!-- 개발자 인스턴스 빈 생성 :: setter 주입 :: id, age, password 값 :: 단순 프라퍼티 값 주입 -->
+<bean id="user02" class="spring.service.domain.User">
+	<property name="age" value="02"/>
+	<property name="password" value="password"/>
+	<property name="userId" value="02유저"/>
+</bean>
+
+<!-- 개발자 인스턴스 빈 생성 :: DI가 없음 -->
+<bean id="user03" class="spring.service.domain.User"/>
+
+
+<!-- 개발자 인스턴스 빈 생성 :: 생성자 주입 :: id, age :: 단순 프라퍼티 값 주입 -->
+<bean id="user04" class="spring.service.domain.User">
+	<constructor-arg value="04"/>
+	<constructor-arg value="04유저"/>
+</bean>
+
+<!-- 개발자 인스턴스 빈 생성 :: 생성자 주입 :: id, age, password :: 단순 프라퍼티 값 주입 -->
+<bean id="user05" class="spring.service.domain.User">
+	<constructor-arg value="05" />
+	<constructor-arg value="05유저"/>
+	<constructor-arg value="0505"/>
+</bean>
+
+<!-- 생성자의 인자값이 여러개일 경우, 이럴때 문제가 발생할 확률이 커진다.
+	 userId, password 값이 서로 바뀌어서 주입된 것을 확인할 수 있다.
+	 이럴경우를 대비해서 생성자 주입일 경우 써줘야 하는ㄴ 속성들이 있다.
+	 index : 생성자의 인자값 순서를 부여 
+	 type, 
+	 name 세 가지가 있다.
+-->
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

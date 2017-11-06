@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+<!-- userservice02.properties 파일을 해당 설정문서로 와이어링 -->
+<context:property-placeholder location="classpath:config/userservice02.properties"/>
+<bean id="user08" class="spring.service.domain.User">
+	<property name="userId" value="${user.userId}"/>
+	<property name="age" value="${user.age}"/>
+	<property name="password" value="${user.password}"/>
+</bean>
+
+<util:properties location="classpath:config/userservice03.properties" id="userP"/>
+<bean id="user09" class="spring.service.domain.User">
+    <property name="userId" value="#{userP{user.userId}}"></property>
+    <property name="age" value="#{userP{user.age}}"></property>
+    <property name="password"
+</bean>
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
