@@ -1,0 +1,34 @@
+import java.util.*;
+public class Main {
+
+	public static void main(String[] args) {
+		
+
+	}
+	
+	public static boolean jamieGame(String initial, String target) {
+		// Pre-condition : input will be consist of ONLY either A or B
+		if(initial.equals(target)) {
+			return true;
+		}
+		if(initial.length() <= 1 || initial.length() >= target.length()) {
+			return false;
+		}
+		
+		StringBuilder init = new StringBuilder(initial);
+		StringBuilder targ = new StringBuilder(target);
+		
+		while(true) {
+			if(targ.length() == init.length()) {
+				if(targ.toString().equals(initial)) {
+					return true;
+				}
+				
+				targ.deleteCharAt(targ.length()-1);
+				targ.reverse();
+			}
+		}
+		
+	}
+
+}

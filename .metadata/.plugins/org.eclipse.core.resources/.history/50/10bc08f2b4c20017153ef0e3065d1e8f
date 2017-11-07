@@ -1,0 +1,43 @@
+import java.util.*;
+public class Main {
+
+	public static void main(String[] args) {
+		String initial = "B";
+		String target = "ABBA";
+		
+		System.out.println("Initial : " + initial);
+		System.out.println("target : " + target);
+		
+		if(jamieGame(initial, target)) System.out.println("Possible");
+		else System.out.println("Impossible");
+		
+	}
+	
+	public static boolean jamieGame(String initial, String target) {
+		// Pre-condition : input will be consist of ONLY either A or B
+		boolean result = false;
+		if(initial.equals(target)) {
+			return true;
+		}
+		if(initial.length() <= 1 || initial.length() >= target.length()) {
+			return false;
+		}
+		
+		StringBuilder init = new StringBuilder(initial);
+
+		while(init.length() <= target.length()) {
+			if(target.length() == init.length()) {
+				if(target.equals(init.toString())) {
+					result = true;
+				} else result = false;
+			} else {
+				init.append("A");
+				init.reverse();
+				init.append("B");
+			}
+		}
+		return result;
+		
+	}
+
+}

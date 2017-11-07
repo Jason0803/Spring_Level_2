@@ -1,0 +1,24 @@
+import java.util.*;
+public class Main {
+
+	public static void main(String[] args) {
+		
+
+	}
+	
+	public static boolean jamieGame(String initial, String target) {
+		if(initial.equals(target)) {
+			return true;
+		}
+		if(initial.length() <= 1) {
+			return false;
+		}
+		
+		StringBuilder init = new StringBuilder(initial);
+		StringBuilder targ = new StringBuilder(target);
+		
+		
+		return false;
+	}
+
+}

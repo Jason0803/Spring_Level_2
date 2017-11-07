@@ -1,0 +1,44 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+		String initial = "B";
+		String target = "ABBA";
+		
+		System.out.println("Initial : " + initial);
+		System.out.println("target : " + target);
+
+		boolean result = false;
+		if(initial.equals(target)) {
+			result =  true;
+		}
+		if(initial.length() <= 1 || initial.length() >= target.length()) {
+			result = false;
+		}
+		
+		StringBuilder init = new StringBuilder(initial);
+
+		while(true) {
+			if(target.length() == init.length()) {
+				if(target.equals(init.toString())) {
+					result = true;
+					break;
+				} else {
+					result = false;
+					break;
+				}
+			} else if(target.length() > init.length()){
+				init.append("A");
+				init.reverse();
+				init.append("B");
+				if(init.toString().equals(target)) {
+					result = true;
+					break;
+				}
+			} 
+		}
+		if(result) System.out.println("Possible");
+		else System.out.println("Impossible");
+	}
+
+}
